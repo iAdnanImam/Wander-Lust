@@ -1,0 +1,89 @@
+<% layout('/layouts/boilerplate') -%>
+<style>
+    #filters{
+        display: flex;
+        flex-wrap:wrap ;
+        justify-content: center;
+    }
+    .filter{
+        text-align: center;
+        margin-right: 1.7rem;
+        opacity: 0.7;
+    }
+    .filter:hover{
+        opacity: 1.2;
+        cursor: pointer;
+    }
+    .filter p{
+        font-size: 0.8rem;
+    }
+</style>
+<body>
+    <div id="filters">
+        <div class="filter">
+            <div><i class="fa-solid fa-fire-flame-curved"></i></div>
+            <p>Trending</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-umbrella-beach"></i></div>
+            <p>Beach</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing Pools</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-wheat-awn"></i></div>
+            <p>Farms</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-building"></i></div>
+            <p>Amazing View</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-house"></i></div>
+            <p>Tiny Homes</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-meteor"></i></div>
+            <p>OMG!</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Iconic Cities</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-mountain"></i></div>
+            <p>Mountains</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-chess-rook"></i></div>
+            <p>Castles</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Camping</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-snowflake"></i></div>
+            <p>Arctic</p>
+        </div>
+    </div>
+    <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+        <%for(let listing of allListings){%>
+            <a href="/listings/<%=listing._id%>" class="listing-link">
+                <div class="card col listing-card">
+                <img src="<%=listing.image.url%>" class="card-img-top mt-3 mb-3" alt="listing_image" style="width: 30rem;height: 20rem;">
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                    <p class="card-text"><b><%=listing.title%></b><br>&#8377;<%=listing.price.toLocaleString("en-IN")%>/night</p>
+                </div>
+                </div>
+            </a>
+        <%}%>
+    </div>
+</body>

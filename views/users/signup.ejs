@@ -1,0 +1,35 @@
+<% layout("/layouts/boilerplate")%>
+<body>
+    <div class="row mt-3">
+        <h1 class="col-6 offset-3 mb-5">SignUp <i class="fa-regular fa-compass"></i></h1>
+        <div class="col-6 offset-3">
+            <form action="/signup" method="POST" novalidate class="needs-validation">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Enter Username</label>
+                    <input name="username" id="username" type="text" class="form-control" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Username is required.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Enter E-mail</label>
+                    <input name="email" id="email" type="text" class="form-control" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Email is required.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label"> Create Password</label>
+                    <input name="password" id="password" type="password" class="form-control" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Password is required.</div>
+                </div>
+                <!-- <div class="mb-2">
+                    <label for="password" class="form-label"> Confirm your Password</label>
+                    <input name="password" id="password" type="password" placeholder="Enter Password Again" class="form-control" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Password is required.</div>
+                </div> -->
+                <button class="btn btn-success signup-btn mt-3">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
