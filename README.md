@@ -57,10 +57,10 @@ npm install
 3. **Create a .env file in the root directory and add the following:**
 ```bash
 MAP_TOKEN=your_mapbox_token
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_KEY=your_key
-CLOUDINARY_SECRET=your_secret
-DB_URL=mongodb+srv://your_mongo_uri
+CLOUD_NAME=your_cloud_name
+CLOUD_API_KEY=your_key
+CLOUD_API_SECRET=your_secret
+ATLASDB_URL=mongodb+srv://your_mongo_uri
 SECRET=your_session_secret
 ```
 4. **Start the development server**
