@@ -4,20 +4,20 @@ const mapToken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
 module.exports.index = async (req, res) => {
-  const { q } = req.query;
-  let allListings;
+  const { q, category } = req.query;
+  let filter = {};
   if (q) {
     const searchRegex = new RegExp(q, 'i');
-    allListings = await Listing.find({
-      $or: [
-        { title: searchRegex },
-        { location: searchRegex }
-      ]
-    });
-  } else {
-    allListings = await Listing.find({});
+    filter.$or = [
+      { title: searchRegex },
+      { location: searchRegex }
+    ];
   }
-  res.render("listings/index", { allListings });
+  if (category && category !== 'All') {
+    filter.category = category;
+  }
+  const allListings = await Listing.find(filter);
+  res.render("listings/index", { allListings, selectedCategory: category || "All", q: q || "" });
 };
 
 module.exports.new = (req, res) => {

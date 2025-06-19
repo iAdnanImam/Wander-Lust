@@ -58,6 +58,10 @@ const sessionOptions={
   }
 };
 // ROUTES
+app.get('/', (req, res) => {
+  res.redirect(302, '/listings');
+});
+
 app.use(session(sessionOptions));
 app.use(flash());
 
